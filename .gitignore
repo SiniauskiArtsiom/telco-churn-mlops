@@ -17,6 +17,7 @@ env/
 model/*.pkl
 model/*.joblib
 model/*.onnx
+!model/metrics.json
 
 # Data
 data/
