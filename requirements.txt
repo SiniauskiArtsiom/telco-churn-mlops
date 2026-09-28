@@ -20,3 +20,10 @@ prometheus-fastapi-instrumentator==7.0.0
 pytest==8.2.0
 httpx==0.27.0
 ruff==0.4.4
+
+# EDA
+jupyter==1.0.0
+notebook==7.2.0
+matplotlib==3.8.4
+seaborn==0.13.2
+ipykernel==6.29.4
