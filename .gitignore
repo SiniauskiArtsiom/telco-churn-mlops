@@ -14,7 +14,7 @@ env/
 .ipynb_checkpoints/
 
 # Models (большие файлы)
-model/*.pkl
+# model/*.pkl для деплоя
 model/*.joblib
 model/*.onnx
 !model/metrics.json
