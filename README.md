@@ -2,6 +2,8 @@
 
 End-to-end ML-сервис для прогнозирования оттока телеком-клиентов.
 
+![CI](https://github.com/<username>/telco-churn-mlops/actions/workflows/ci.yml/badge.svg)
+
 ## Стек
 - Python 3.10, Pandas, Scikit-learn, CatBoost
 - FastAPI, Pydantic, Uvicorn
