@@ -1,7 +1,7 @@
 """Pydantic schemas for the Telco Churn API."""
 from __future__ import annotations
 
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
@@ -67,13 +67,13 @@ class PredictionResponse(BaseModel):
     threshold: float = 0.5
     model_name: str
 
+    model_config = {"protected_namespaces": ()}
 
 class HealthResponse(BaseModel):
     status: Literal["ok", "degraded"]
     model_loaded: bool
 
-
-from typing import Any
+    model_config = {"protected_namespaces": ()}
 
 
 class ModelInfoResponse(BaseModel):
@@ -81,3 +81,5 @@ class ModelInfoResponse(BaseModel):
     features: list[str]
     trained_at: str | None = None
     metrics: list[dict[str, Any]] | dict[str, Any] | None = None
+
+    model_config = {"protected_namespaces": ()}

@@ -60,7 +60,7 @@ def model_info() -> ModelInfoResponse:
     try:
         model = load_model()
     except FileNotFoundError as e:
-        raise HTTPException(status_code=503, detail=str(e))
+        raise HTTPException(status_code=503, detail=str(e)) from e
 
     metrics = load_metrics()
     trained_at = None
@@ -86,10 +86,10 @@ def predict(payload: CustomerFeatures) -> PredictionResponse:
         features = payload.model_dump()
         proba = predict_proba(features)
     except FileNotFoundError as e:
-        raise HTTPException(status_code=503, detail=str(e))
+        raise HTTPException(status_code=503, detail=str(e)) from e
     except Exception as e:
         logger.exception("Prediction failed")
-        raise HTTPException(status_code=500, detail=f"Prediction failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Prediction failed: {e}") from e
 
     elapsed_ms = (time.perf_counter() - start) * 1000
     logger.info("predicted proba=%.4f in %.1f ms", proba, elapsed_ms)

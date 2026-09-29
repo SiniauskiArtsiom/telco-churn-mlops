@@ -1,13 +1,12 @@
 """Plot ROC curve for the best saved model."""
 from __future__ import annotations
 
-import json
 from pathlib import Path
 
 import joblib
 import matplotlib.pyplot as plt
 import pandas as pd
-from sklearn.metrics import roc_curve, roc_auc_score
+from sklearn.metrics import roc_auc_score, roc_curve
 from sklearn.model_selection import train_test_split
 
 from app.preprocess import clean_raw, split_features_target

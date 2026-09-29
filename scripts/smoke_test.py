@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import sys
+
 import httpx
 
 BASE = "http://localhost:8000"

@@ -5,7 +5,6 @@ import json
 from pathlib import Path
 
 import joblib
-import numpy as np
 import pandas as pd
 from catboost import CatBoostClassifier
 from sklearn.linear_model import LogisticRegression
